@@ -1,5 +1,5 @@
 name: Haos ARP Syncing
-version: "1.0.7"
+version: "1.0.8"
 slug: haos-arp-syncing
 description: |
   haos-arp-syncing is a lightweight service that synchronizes ARP tables across multiple network interfaces to ensure consistent device discovery and connectivity.
@@ -17,9 +17,7 @@ init: false
 ingress: false
 
 # Quan trọng: bật host network để mDNS hoạt động
-host_network: true
-
-privileged: true 
+host_network: true 
 
 map:
   - config:rw
