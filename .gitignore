@@ -11,9 +11,9 @@ devices.json
 .vscode
 .tuya
 .matter
-arp-syncing/app/.matter
-arp-syncing/app/.tuya
-arp-syncing/app/node_modules
-arp-syncing/app/build
-arp-syncing/app/.env
-arp-syncing/app/bin
+haos-arp-syncing/app/.matter
+haos-arp-syncing/app/.tuya
+haos-arp-syncing/app/node_modules
+haos-arp-syncing/app/build
+haos-arp-syncing/app/.env
+haos-arp-syncing/app/bin

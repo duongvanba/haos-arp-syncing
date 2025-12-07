@@ -1,10 +1,10 @@
-name: Modem ARP Syncing
-version: "1.0.6"
-slug: arp-syncing
+name: Haos ARP Syncing
+version: "1.0.7"
+slug: haos-arp-syncing
 description: |
-  arp-syncing is a lightweight service that synchronizes ARP tables across multiple network interfaces to ensure consistent device discovery and connectivity.
+  haos-arp-syncing is a lightweight service that synchronizes ARP tables across multiple network interfaces to ensure consistent device discovery and connectivity.
   It is particularly useful in environments with multiple subnets or VLANs, where devices may not be visible across different network segments.
-  By keeping ARP tables in sync, arp-syncing helps maintain seamless communication between devices, improving network reliability and performance.
+  By keeping ARP tables in sync, haos-arp-syncing helps maintain seamless communication between devices, improving network reliability and performance.
   This add-on is ideal for home labs, small office networks, and any setup that requires robust device discovery across diverse network configurations.
   
 arch:
