@@ -3,7 +3,6 @@ import { XMLParser } from "fast-xml-parser";
 import { createHash } from "crypto";
 import { CookieJar } from 'tough-cookie'
 import { publicEncrypt, constants } from "crypto";
-import qs from 'querystring'
 
 
 const parser = new XMLParser();

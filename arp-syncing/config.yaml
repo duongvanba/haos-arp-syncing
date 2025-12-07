@@ -1,5 +1,5 @@
 name: ARP Syncing
-version: "1.0.3"
+version: "1.0.4"
 slug: arp-syncing
 description: |
   arp-syncing is a lightweight service that synchronizes ARP tables across multiple network interfaces to ensure consistent device discovery and connectivity.

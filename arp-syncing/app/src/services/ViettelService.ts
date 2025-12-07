@@ -2,7 +2,7 @@ import { Injectable } from "@nestjs/common";
 import { ViettelModem } from "../libs/ViettelModem.js";
 import got from "got";
 import { MODEM_IP, MODEM_PASSWORD, MODEM_USERNAME } from "../const.js";
-import { filter, finalize, interval, lastValueFrom, mergeAll, mergeMap, startWith } from "rxjs";
+import { catchError, EMPTY, finalize, interval, lastValueFrom, mergeAll, mergeMap, startWith } from "rxjs";
 import { execSync } from "child_process";
 
 
@@ -38,11 +38,12 @@ export class ViettelService {
             mergeMap(async ({ destip, macaddr }) => {
                 console.log(`Set ARP entry: ${destip} -> ${macaddr}`)
                 try{
-                    execSync(`sudo arp -s ${destip} ${macaddr}`)
+                    execSync(`arp -s ${destip} ${macaddr}`)
                 }catch(e){
                     console.error(`Failed to set ARP entry for ${destip}: ${(e as Error).message}`)
                 }
             }),
+            catchError(() => EMPTY),
             finalize(() => {
                 console.log('ARP syncing completed')
             })
