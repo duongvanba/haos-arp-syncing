@@ -1,5 +1,5 @@
 name: ARP Syncing
-version: "1.0.4"
+version: "1.0.5"
 slug: arp-syncing
 description: |
   arp-syncing is a lightweight service that synchronizes ARP tables across multiple network interfaces to ensure consistent device discovery and connectivity.
@@ -18,6 +18,8 @@ ingress: false
 
 # Quan trọng: bật host network để mDNS hoạt động
 host_network: true
+
+privileged: true 
 
 map:
   - config:rw
