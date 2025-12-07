@@ -30,9 +30,8 @@ export class ViettelService {
                 const vt = new ViettelModem(MODEM_IP!)
                 await vt.login(MODEM_USERNAME!, MODEM_PASSWORD!)
                 const hosts = await vt.getArpTable()
-                const onlines = hosts.filter(h => h.status == 1)
-                console.log(`Found ${onlines.length} online hosts from Viettel modem`)
-                return onlines
+                console.log(`Found ${hosts.length} online hosts from Viettel modem`)
+                return hosts
             }),
             mergeAll(),
             mergeMap(async ({ destip, macaddr }) => {
