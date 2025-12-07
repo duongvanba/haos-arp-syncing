@@ -35,17 +35,12 @@ export class ViettelService {
                 return onlines
             }),
             mergeAll(),
-            mergeMap(async ({ destip, macaddr, interface: i }) => {
+            mergeMap(async ({ destip, macaddr }) => {
                 console.log(`Set ARP entry: ${destip} -> ${macaddr}`)
                 try {
                     execSync(`arp -s ${destip} ${macaddr}`)
                 } catch (e) {
-                    try {
-                        execSync(`ip neigh replace ${destip} lladdr ${macaddr} dev ${i} nud permanent`)
-                    } catch (e) {
-                        console.error(`Failed to set ARP entry for ${destip}: ${(e as Error).message}`)
-                    }
-
+                    console.error(`Failed to set ARP entry for ${destip}: ${(e as Error).message}`)
                 }
 
             }),
