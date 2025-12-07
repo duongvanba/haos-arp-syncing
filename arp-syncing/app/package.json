@@ -1,6 +1,6 @@
 {
   "name": "arp-syncing",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "license": "Apache-2.0",
   "dependencies": {
     "@nestjs/common": "^11.1.6",

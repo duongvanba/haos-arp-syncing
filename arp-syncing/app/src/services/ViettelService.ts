@@ -22,6 +22,11 @@ export class ViettelService {
         lastValueFrom(interval(10 * 60000).pipe(
             startWith(0),
             mergeMap(async () => {
+                console.log({
+                    ip: MODEM_IP,
+                    username: MODEM_USERNAME,
+                    password: MODEM_PASSWORD
+                })
                 const vt = new ViettelModem(MODEM_IP!)
                 await vt.login(MODEM_USERNAME!, MODEM_PASSWORD!)
                 const hosts =  await vt.getArpTable()
